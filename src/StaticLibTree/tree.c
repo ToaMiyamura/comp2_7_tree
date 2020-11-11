@@ -51,17 +51,21 @@ bool add_node(binary_tree* t, int key, const char* value)
 	// todo: ノードを作成して、適切な位置に挿入してください
 	node* p = malloc(sizeof(node));
 
-	if (p == NULL) {
+	if (p == NULL)
+	{
 		false;
 	}
+
 	p->key = key;
 	strcpy_s(p->value, 256, value);
 	p->left = p->right = NULL;
 
-	if (t->root == NULL) {
+	if (t->root == NULL)
+	{
 		t->root = p;
 	}
-	else {
+	else
+	{
 		insert_node(t->root, p);
 	}
 	return true;
