@@ -32,16 +32,21 @@ static void insert_node(node* p, node* n) {
 		if (p->left == NULL) {
 			p->left = n;
 		}
-		else {
-			if (p->right == NULL) {
-				p->right = n;
-			}
+		
 			else {
 				insert_node(p->right, n);
 			}
 		}
+	else {
+		if (p->right == NULL) {
+			p->right = n;
+		}
+		else {
+			insert_node(p->right, n);
+		}
 	}
-}
+	}
+
 
 //
 // keyの値を見てノードを追加する
@@ -53,7 +58,7 @@ bool add_node(binary_tree* t, int key, const char* value)
 
 	if (p == NULL)
 	{
-		false;
+		return false;
 	}
 
 	p->key = key;
